@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{xcolor}  % For colored text
+
+% Define theorem styles without mdframed
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% Custom colors for theorems
+\definecolor{theoremcolor}{RGB}{0,0,128}
+\definecolor{defcolor}{RGB}{0,100,0}
+\definecolor{excolor}{RGB}{139,69,19}
+
+% Custom theorem headers
+\makeatletter
+\newcommand{\thmheader}[1]{%
+  \textcolor{#1}{\normalfont\bfseries}%
+}
+\makeatother
+
+\title{Vector Spaces in Linear Algebra}
+\author{Clovis W. Bertholini Sb.}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Vector Space Axioms}
+\begin{definition}
+\thmheader{defcolor}A \textbf{vector space} over a field $\mathbb{F}$ is a set $V$ with two operations:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Vector addition}: $+: V \times V \to V$
+    \item \textbf{Scalar multiplication}: $\cdot: \mathbb{F} \times V \to V$
+\end{itemize}
+satisfying these axioms:
+\end{definition}
+
+\begin{enumerate}[label=(V\arabic*),leftmargin=*]
+    \item $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$
+    \item $(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$
+    \item $\exists \mathbf{0} \in V$ such that $\mathbf{v} + \mathbf{0} = \mathbf{v}$
+    \item $\forall \mathbf{v} \in V, \exists -\mathbf{v} \in V$ with $\mathbf{v} + (-\mathbf{v}) = \mathbf{0}$
+    \item $\alpha(\beta\mathbf{v}) = (\alpha\beta)\mathbf{v}$
+    \item $1\mathbf{v} = \mathbf{v}$
+    \item $\alpha(\mathbf{u} + \mathbf{v}) = \alpha\mathbf{u} + \alpha\mathbf{v}$
+    \item $(\alpha + \beta)\mathbf{v} = \alpha\mathbf{v} + \beta\mathbf{v}$
+\end{enumerate}
+
+\section{Important Properties}
+\begin{theorem}
+\thmheader{theoremcolor}In any vector space $V$:
+\begin{itemize}[leftmargin=*]
+    \item The zero vector $\mathbf{0}$ is unique
+    \item Additive inverses are unique
+    \item $0\mathbf{v} = \mathbf{0}$ for all $\mathbf{v} \in V$
+    \item $(-1)\mathbf{v} = -\mathbf{v}$ for all $\mathbf{v} \in V$
+\end{itemize}
+\end{theorem}
+
+\section{Key Examples}
+\begin{example}
+\thmheader{excolor}\textbf{Euclidean Space $\mathbb{R}^n$}:
+\[
+\mathbb{R}^n = \left\{ \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} \mid x_i \in \mathbb{R} \right\}
+\]
+with component-wise operations.
+\end{example}
+
+\begin{example}
+\thmheader{excolor}\textbf{Matrix Space $M_{m \times n}(\mathbb{R})$}:
+\[
+\begin{pmatrix} a & b \\ c & d \end{pmatrix} + \begin{pmatrix} e & f \\ g & h \end{pmatrix} = \begin{pmatrix} a+e & b+f \\ c+g & d+h \end{pmatrix}
+\]
+\end{example}
+
+\end{document}

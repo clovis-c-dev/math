@@ -1,0 +1,29 @@
+## LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.synctex.gz
+*.ind
+*.ilg
+*.idx
+
+## Output files
+*.pdf
+*.dvi
+*.ps
+
+## Temporary files
+*.swp
+*.bak
+*~
+
+## Editor specific files (Vim)
+*.swp
+*.swo
