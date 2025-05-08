@@ -28,7 +28,7 @@
 }
 \makeatother
 
-\title{Vector Spaces in Linear Algebra}
+\title{Linear Algebra}
 \author{Clovis W. Bertholini Sb.}
 \date{\today}
 
@@ -79,7 +79,7 @@ with component-wise operations.
         We need show that exists the two operations $(+)$ and $(\cdot)$, that satisfies all eight axioms above. Let's define these operations: \\
         \\
         Take two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$, \\
-        where $\mathbf{u} = (a_1, \ldots, a_n)$ and $\mathbf{v} = (b_1, \ldots, b_n)$ with $a_i, b_i \in \mathbb{R}$ for all $i \in \left\{1, 2, \ldots, n \right\}$. \\
+        where $\mathbf{u} = (a_1, \ldots, a_n)$ and $\mathbf{v} = (b_1, \ldots, b_n)$ with $a_i, b_i \in \mathbb{R}$ for all $i = 1, 2, \ldots, n$. \\
         Then we can define,\\
                 \[
                 \begin{aligned}
@@ -94,17 +94,37 @@ with component-wise operations.
                 \]
         \begin{enumerate}[label=(V\arabic*),leftmargin=*]
             \item $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$ \\
+                Given $\mathbf{u} = (a_1, \ldots, a_n)$ and $\mathbf{v} = (b_1, \ldots, b_n)$, where $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ and $a_i, b_i \in \mathbb{R}$ with $i = 1, \ldots, n$. \\
+                \\
                 \[
                 \begin{aligned}
                     \mathbf{u} + \mathbf{v} &\Leftrightarrow (a_1, \ldots, a_n) + (b_1, \ldots, b_n), \;\text{by def.}\; \\
                                             &\Leftrightarrow (a_i + b_i, \ldots, a_n + b_n) \\
-                                            &\Leftrightarrow (a_i + b_i) \;\text{How}\; a_i, b_i \in \mathbb{R} \;\text{and}\; \mathbb{R} \;\text{is a Field, then, we have that}\; \forall x, y \in \mathbb{R}, x + y = y + x \\
+                                            &\Leftrightarrow (a_i + b_i) \textsuperscript{[1]} \\
                                             &\Leftrightarrow (b_i + a_i) \\
                                             &\Leftrightarrow (b_1 + a_1, \ldots, b_n + a_n) \\
                                             &\Leftrightarrow (b_1, \ldots, b_n) + (a_1, \ldots, a_n), \;\text{by def.}\; \\
                                             &\Leftrightarrow \mathbf{v} + \mathbf{u}
                 \end{aligned}
+                \] 
+                \footnotetext[1]{Since $a_i, b_i \in \mathbb{R}$ and $\mathbb{R}$ is a Field, then, we have that $\forall x, y \in \mathbb{R}, x + y = y + x$.}
+            \item $(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$
+                Given $\mathbf{u} = (a_1, \ldots, a_n)$, $\mathbf{v} = (b_1, \ldots, b_n)$ and $\mathbf{w} = (c_1, \ldots, c_n)$, where $\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{R}^n$ and $a_i, b_i, c_i \in \mathbb{R}$ with $i = 1, \ldots, n$. \\
+                \\
+                \[
+                \begin{aligned}
+                    (\mathbf{u} + \mathbf{v}) + \mathbf{w} &\Leftrightarrow ((a_1, \ldots, a_n) + (b_1, \ldots, b_n)) + (c_1, \ldots, c_n), \;\text{by def.} \\
+                                                           &\Leftrightarrow (a_1 + b_1, \ldots, a_n + b_n) + (c_1, \ldots, c_n) \\
+                                                           &\Leftrightarrow ((a_1 + b_1) + c_1, \ldots, (a_n + b_n) + c_n) \\
+                                                           &\Leftrightarrow ((a_i + b_i) + c_i) \textsuperscript{[2]} \\
+                                                           &\Leftrightarrow (a_i + (b_i + c_i)) \\
+                                                           &\Leftrightarrow (a_1 + (b_1 + c_1), \ldots, a_n + (b_n + c_n)) \\
+                                                           &\Leftrightarrow (a_1, \ldots, a_n) + (b_1 + c_1, \ldots, b_n + c_n) \\
+                                                           &\Leftrightarrow (a_1, \ldots, a_n) + ((b_1, \ldots, b_n) + (c_1, \ldots, c_n)) \;\text{by def.} \\
+                                                           &\Leftrightarrow \mathbf{u} + (\mathbf{v} + \mathbf{w})
+                \end{aligned}
                 \]
+                \footnotetext[2]{Since $a_i, b_i, c_i \in \mathbb{R}$ and $\mathbb{R}$ is a Field, then, we have that $\forall x, y, z \in \mathbb{R}, (x + y) + z = x + (y + z)$.}
         \end{enumerate}
     \end{proof}
 \end{example}
